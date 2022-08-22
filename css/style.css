@@ -1363,6 +1363,16 @@ li.menu-item.current-menu-item {
     width: 850px;
 }
 
+.cloude1 {
+    position: absolute;
+    left: 20px;
+    bottom: 50px;
+}
+
+.cloude1 img {
+    width: 90px;
+}
+
 .section2 {
     position: relative;
     /* height: 100vh; */
