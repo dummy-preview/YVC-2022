@@ -1228,7 +1228,7 @@ li.menu-item.current-menu-item {
 .title26:before {
     content: '';
     position: absolute;
-    bottom: 25px;
+    bottom: 45px;
     left: 0;
     width: 230px;
     height: 14px;
@@ -1239,7 +1239,7 @@ li.menu-item.current-menu-item {
 .title27:before {
     content: '';
     position: absolute;
-    bottom: 25px;
+    bottom: 46px;
     left: 0;
     width: 281px;
     height: 14px;
@@ -1250,7 +1250,7 @@ li.menu-item.current-menu-item {
 .title28:before {
     content: '';
     position: absolute;
-    bottom: 25px;
+    bottom: 46px;
     left: 0;
     width: 435px;
     height: 14px;
@@ -1261,7 +1261,7 @@ li.menu-item.current-menu-item {
 .title29:before {
     content: '';
     position: absolute;
-    bottom: 25px;
+    bottom: 46px;
     left: 0;
     width: 174px;
     height: 14px;
@@ -1743,6 +1743,13 @@ li.menu-item.current-menu-item {
     display: flex;
     align-items: center;
     margin: 10px 0px;
+}
+
+.section4__sub {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #EC2238;
 }
 
 .section4__text {
@@ -6582,137 +6589,9 @@ input[type=file] {
     margin-top: 10px;
 }
 
-.modal {
-    z-index: 100;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    visibility: hidden;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    position: fixed;
-    text-align: center;
-}
-
-.modal.is-visible {
-    visibility: visible;
-    opacity: 1;
-}
-
-.modal-overlay {
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: hsla(0, 0%, 0%, 0.5);
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s linear 0.3s, opacity 0.3s;
-}
-
-.modal.is-visible .modal-overlay {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0s;
-}
-
-.modal-wrapper {
-    position: fixed;
-    z-index: 9999;
-    box-shadow: 0 0 1.5em hsla(0, 0%, 0%, 0.35);
-}
-
-.modal-transition {
-    transition: all 0.3s 0.12s;
-    transform: translateY(-10%);
-    opacity: 0;
-}
-
-.modal.is-visible .modal-transition {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.modal-content {
-    position: relative;
-}
-
-.modal-content button {
-    background: transparent;
-    padding: 5px 10px;
-    font-weight: bold;
-    color: #ffffff;
-    font-size: 16px;
-}
-
-.modal-body {
-    background: #ffffff;
-    width: 500px;
-    height: 300px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 20px;
-}
-
-.modal-body__item p {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-    color: #000000;
-    padding: 0px 9%;
-    margin: 20px 0px;
-}
-
 .btn-center {
     justify-content: center;
     margin-top: 20px;
-}
-
-.btn-modal button {
-    width: 150px;
-    height: 60px;
-    background: #3A5AFF;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 23px;
-    line-height: 34px;
-    text-align: center;
-    color: #ffffff;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-}
-
-.btn-modal button:hover {
-    transform: scale(0.94);
-    filter: brightness(0.8);
-}
-
-.modal-close {
-    margin-right: 50px;
-}
-
-.ratio iframe {
-    width: 800px;
-    height: 450px;
-}
-
-.modal-content>*:first-child {
-    margin-top: 0;
-}
-
-.modal-content>*:last-child {
-    margin-bottom: 0;
 }
 
 .hidedesktop {
@@ -8119,6 +7998,107 @@ input[type=file] {
     }
 }
 
+.modal {
+    position: fixed;
+    top: 0px;
+    pointer-events: none;
+    left: 0px;
+    background: rgba(51, 51, 51, 0.9);
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal.active .box {
+    top: 50%;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.close:hover {
+    transform: scale(0.95);
+    filter: brightness(0.8);
+}
+
+.modal .box {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 65px;
+    position: absolute;
+    overflow-y: scroll;
+    height: 500px;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+}
+
+.box__content--text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: left;
+    color: #333333;
+    padding-bottom: 10px;
+}
+
+.box__content--bnt {
+    text-align: center;
+}
+
+.red {
+    color: #D72027;
+}
+
+.btn-pt img,
+.btn-starup img {
+    width: 300px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.btn-pt img:hover,
+.btn-starup img:hover {
+    transform: scale(0.95);
+    filter: brightness(0.8);
+}
+
+.box__content h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.box__content h3 {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.box__content--text ul {
+    margin-left: 30px;
+}
+
 @media (max-width:1600px) {
     .indikator__obj1 {
         right: 7%;
@@ -8500,18 +8480,6 @@ input[type=file] {
     .lokasi__right {
         width: 350px;
     }
-    .modal-content {
-        padding: 0px 20px;
-    }
-    .modal-body {
-        width: 100%;
-        height: 283px;
-    }
-    .modal-body__item h1 {
-        font-size: 24px;
-        line-height: 29px;
-        font-weight: 600;
-    }
     .syarat {
         height: auto;
     }
@@ -8733,6 +8701,14 @@ input[type=file] {
 }
 
 @media (max-width:550px) {
+    .box__content--text ul li {
+        padding-bottom: 10px;
+    }
+    .modal.active .box {
+        top: 50%;
+        width: 95%;
+        padding: 65px 30px;
+    }
     .mt-5 {
         margin-top: 0px;
     }
@@ -8988,20 +8964,6 @@ input[type=file] {
     }
     .indikator__obj2 img {
         width: 70px;
-    }
-    .modal-body {
-        width: 100%;
-        padding: 0px 0px;
-        height: 283px;
-    }
-    .modal-body__item p {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 21px;
-        text-align: center;
-        color: #000000;
-        padding: 0px 9%;
-        margin: 20px 0px;
     }
     .btn-modal button {
         width: 124px;
