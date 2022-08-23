@@ -107,6 +107,30 @@ var swiper = new Swiper(".mySwiper3", {
         clickable: true,
     },
 });
+var swiper = new Swiper(".mySwiper4", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
+var swiper = new Swiper(".mySwiper5", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
 
 function videoId(button) {
     var $videoUrl = button.attr("data-video");
