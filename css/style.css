@@ -8048,12 +8048,16 @@ input[type=file] {
     text-align: center;
     padding: 65px;
     position: absolute;
-    overflow-y: scroll;
-    height: 500px;
+    height: 80%;
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: 0.3s;
+}
+
+.box__content {
+    overflow-y: scroll;
+    height: 100%;
 }
 
 .box__content--text {
