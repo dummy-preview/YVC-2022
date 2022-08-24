@@ -2246,6 +2246,7 @@ li.menu-item.current-menu-item {
 
 .section9__card--photo img {
     width: 100%;
+    border-radius: 8px;
 }
 
 .section9__card h1 {
@@ -2254,6 +2255,10 @@ li.menu-item.current-menu-item {
     line-height: 28px;
     color: #333333;
     margin-top: 33px;
+}
+
+.section9__card h1:hover {
+    color: #EC2238;
 }
 
 .section9__card--date {
